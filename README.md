@@ -1,69 +1,46 @@
 # Laptop Recommendation and Rating Prediction System
 
-Live Demo:  
+🔗 Live Demo:  
 https://laptop-price-and-recommendation-system-icvhjjspmfrmmy2rfmtuaq.streamlit.app/
 
 ---
 
 ## Overview
-
-This project builds an end-to-end machine learning system that predicts laptop ratings and recommends the best laptops based on user preferences such as budget, RAM, storage, and brand. The system is deployed as an interactive Streamlit web application.
-
----
-
-## Problem Statement
-
-Laptop buyers face difficulty comparing specifications and identifying high-quality options within a fixed budget.  
-This project solves that problem by using machine learning to predict laptop quality and recommend top-performing laptops.
+A **learning-focused machine learning project** that predicts laptop ratings and recommends suitable laptops based on user preferences such as budget, RAM, storage, and brand. Built and deployed using **Streamlit**.
 
 ---
 
-## Solution
-
-- Performed data cleaning and exploratory data analysis
-- Engineered relevant numerical and categorical features
-- Built a preprocessing and modeling pipeline
-- Trained an XGBoost regression model
-- Deployed the model using Streamlit for real-time interaction
-
----
-
-## Machine Learning Details
-
-**Target Variable**
-- Laptop Rating
-
-**Features**
-- Brand  
-- Processor Name  
-- RAM (GB)  
-- Storage  
-- Price  
-- Operating System  
-
-**Model**
-- XGBoost Regressor
-
-**Preprocessing**
-- Standard scaling for numerical features
-- One-hot encoding for categorical features
-- Outlier handling using winsorization
-- Log transformation of the target variable
-
-**Evaluation**
-- R² Score: ~0.91  
-- Low prediction error on unseen data
+## What I Did
+- Cleaned and explored a real-world laptop dataset  
+- Engineered numerical and categorical features  
+- Trained a regression model to predict laptop ratings  
+- Built a simple recommendation logic  
+- Deployed an interactive web app using Streamlit  
 
 ---
 
-## Application Features
-
-- Budget-based filtering
-- Brand and specification selection
-- Top five laptop recommendations
-- CSV export of recommendations
+## Model Details
+- **Target:** Laptop Rating  
+- **Features:** Brand, Processor, RAM, Storage, Price, OS  
+- **Model:** XGBoost Regressor  
+- **Metric:** R² Score (~0.91)  
 
 ---
+
+## App Features
+- Budget-based filtering  
+- Top 5 laptop recommendations  
+- CSV export of results  
+
+---
+
+## Tools Used
+Python, Pandas, NumPy, Scikit-learn, XGBoost, Streamlit
+
+---
+
+## Notes
+This project was built for **learning and practice** and does not use real-time market data.
 
 
 ## Repository Structure
