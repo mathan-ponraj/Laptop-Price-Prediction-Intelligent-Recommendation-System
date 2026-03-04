@@ -1,93 +1,90 @@
-# Laptop Recommendation and Rating Prediction System
+# Laptop Rating Prediction and Recommendation System
 
-🔗 Live Demo:  
+Live Demo:  
 https://laptop-price-and-recommendation-system-icvhjjspmfrmmy2rfmtuaq.streamlit.app/
 
----
+## Project Overview
 
-## Overview
-A **learning-focused machine learning project** that predicts laptop ratings and recommends suitable laptops based on user preferences such as budget, RAM, storage, and brand. Built and deployed using **Streamlit**.
+This project builds a machine learning system that predicts laptop ratings based on hardware specifications and recommends suitable laptops according to user-defined budget and preferences. The application is deployed using Streamlit.
 
----
+## Problem Statement
 
-## What I Did
-- Cleaned and explored a real-world laptop dataset  
-- Engineered numerical and categorical features  
-- Trained a regression model to predict laptop ratings  
-- Built a simple recommendation logic  
-- Deployed an interactive web app using Streamlit  
+Customers often struggle to choose laptops due to multiple configuration options across price ranges. The objective of this project is to:
 
----
+- Predict laptop ratings using structured specification data
+- Recommend top-performing laptops within a given budget
 
-## Model Details
-- **Target:** Laptop Rating  
-- **Features:** Brand, Processor, RAM, Storage, Price, OS  
-- **Model:** XGBoost Regressor  
-- **Metric:** R² Score (~0.91)  
+## Dataset
 
----
+The dataset contains structured laptop specification data including:
 
-## App Features
+- Brand  
+- Processor  
+- RAM  
+- Storage  
+- Operating System  
+- Price  
+
+Target Variable:
+- Laptop Rating
+
+Note: The dataset represents historical data and does not use real-time market pricing.
+
+## Data Science Workflow
+
+1. Data Cleaning  
+   - Handled missing values  
+   - Removed duplicates  
+   - Standardized categorical variables  
+
+2. Feature Engineering  
+   - Encoded categorical variables  
+   - Selected relevant features based on correlation analysis  
+
+3. Model Development  
+   - Model: XGBoost Regressor  
+   - Evaluation Metric: R² Score  
+   - Achieved R² ≈ 0.91 on test data  
+
+## Recommendation Logic
+
+- Filters laptops based on user budget  
+- Ranks laptops using predicted ratings  
+- Returns Top 5 recommendations  
+- Allows CSV export of results  
+
+## Application Features
+
 - Budget-based filtering  
-- Top 5 laptop recommendations  
-- CSV export of results  
+- Brand filtering  
+- Top 5 ranked laptops  
+- Downloadable CSV output  
 
----
+## Tech Stack
 
-## Tools Used
-Python, Pandas, NumPy, Scikit-learn, XGBoost, Streamlit
-
----
-
-## Notes
-This project was built for **learning and practice** and does not use real-time market data.
-
-
-## Repository Structure
-```
-Laptop_Price_Recommendation_System/
-├── README.md # Project documentation
-├── data/
-│ └── data.csv # Preprocessed dataset
-├── notebooks/
-│ └── LAPTOP_RECOMMENDATION_MODEL.ipynb # Jupyter Notebook with complete workflow
-├── app/
-│ └── streamlit_app.py # Streamlit web app script
-├── requirements.txt # Required Python libraries
-```
-
----
-
-
-
----
-
-## Key Insights
-
-- Price and RAM strongly influence laptop ratings
-- Higher-end processors and brands tend to score better
-- Budget-based filtering improves recommendation quality
-
----
+- Python  
+- Pandas  
+- NumPy  
+- Scikit-learn  
+- XGBoost  
+- Streamlit  
 
 ## Limitations
 
-- Dataset does not reflect real-time market prices
-- Hardware details such as battery life and GPU are not included
-- Recommendations rely on historical data only
-
----
+- No real-time pricing integration  
+- Limited hardware attributes (GPU, battery, display not included)  
+- Model is not dynamically retrained  
 
 ## Future Improvements
 
-- Add GPU and battery features
-- Tune model hyperparameters
-- Integrate real-time pricing APIs
-- Deploy using Docker and cloud services
+- Add additional hardware features  
+- Perform hyperparameter tuning  
+- Apply cross-validation  
+- Integrate real-time pricing APIs  
+- Containerize and deploy to cloud infrastructure  
 
----
 
 ## Author
 
-Mathan  
+Mathan Ponraj  
 LinkedIn: https://www.linkedin.com/in/mathan03/
