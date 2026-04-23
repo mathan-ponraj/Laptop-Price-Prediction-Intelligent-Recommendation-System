@@ -8,7 +8,7 @@ In a crowded electronics market, consumers often face "analysis paralysis" due t
 ## Technical Approach
 
 ### 1. Data Engineering & Cleaning
-Instead of just feeding raw data into a model, I focused on making the data "machine-learnable":
+Instead of just feeding raw data into a model, I focused on making the data into "machine-learnable":
 *   **Feature Standardisation:** Cleaned and unified categorical variables across diverse brands and operating systems.
 *   **Handling Sparsity:** Managed missing values and duplicates to ensure the model wouldn't learn from noise.
 *   **Encoding Strategy:** Applied strategic encoding to transform hardware specs into numerical formats while preserving feature importance.
