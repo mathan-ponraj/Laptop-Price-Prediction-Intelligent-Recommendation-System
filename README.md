@@ -1,6 +1,20 @@
-# Laptop Price Prediction & Intelligent Recommendation System
+# Enterprise Laptop Recommendation Engine & Intelligence System
 
-[![Live Demo]](https://laptop-price-and-recommendation-system-icvhjjspmfrmmy2rfmtuaq.streamlit.app/)
+[![Live Demo](https://img.shields.io/badge/Streamlit-Live%20Demo-FF4B4B?style=for-the-badge&logo=streamlit)](https://laptop-price-and-recommendation-system-icvhjjspmfrmmy2rfmtuaq.streamlit.app/)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python)](https://www.python.org/)
+[![XGBoost](https://img.shields.io/badge/XGBoost-Regressor-008000?style=for-the-badge)](https://xgboost.readthedocs.io/)
+[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Pipeline-F7931E?style=for-the-badge&logo=scikit-learn)](https://scikit-learn.org/)
+
+## System Architecture Overview
+This repository contains an end-to-end Machine Learning pipeline and dynamic recommendation application designed to solve consumer choice paralysis in technical hardware markets. Moving beyond simple database querying, the system leverages a trained **XGBoost Regressor** to evaluate, score, and rank laptop options dynamically using user-specified performance constraints.
+
+├── data/              # Source datasets
+├── images/            # Generated EDA visualization outputs
+├── model/             # Serialized joblib model artifacts
+├── app.py             # Streamlit web application & inference engine
+├── eda_laptop.py      # Exploratory Data Analysis script & image exporter
+├── train_model.py     # Data transformation & XGBoost training pipeline
+└── requirements.txt   # Project dependencies
 
 ## The Core Challenge
 In a crowded electronics market, consumers often face "analysis paralysis" due to the overwhelming variety of hardware configurations. This project was built to bridge the gap between complex technical specs (CPU, RAM, Storage) and user-centric value, providing data-driven price predictions and personalized purchase recommendations.
