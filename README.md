@@ -1,56 +1,64 @@
-# Enterprise Laptop Recommendation Engine & Intelligence System
+# 💻 LapPick
 
-[![Live Demo](https://img.shields.io/badge/Streamlit-Live%20Demo-FF4B4B?style=for-the-badge&logo=streamlit)](https://laptop-price-and-recommendation-system-icvhjjspmfrmmy2rfmtuaq.streamlit.app/)
-[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?style=for-the-badge&logo=python)](https://www.python.org/)
-[![XGBoost](https://img.shields.io/badge/XGBoost-Regressor-008000?style=for-the-badge)](https://xgboost.readthedocs.io/)
-[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Pipeline-F7931E?style=for-the-badge&logo=scikit-learn)](https://scikit-learn.org/)
+> **Find the right laptop with data, not guesswork.**
 
-## System Architecture Overview
-This repository contains an end-to-end Machine Learning pipeline and dynamic recommendation application designed to solve consumer choice paralysis in technical hardware markets. Moving beyond simple database querying, the system leverages a trained **XGBoost Regressor** to evaluate, score, and rank laptop options dynamically using user-specified performance constraints.
+[![🚀 OPEN LIVE DEMO](https://img.shields.io/badge/🚀%20OPEN%20LIVE%20DEMO-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://laptop-price-and-recommendation-system-icvhjjspmfrmmy2rfmtuaq.streamlit.app/)
 
-├── data/              # Source datasets
-├── images/            # Generated EDA visualization outputs
-├── model/             # Serialized joblib model artifacts
-├── app.py             # Streamlit web application & inference engine
-├── eda_laptop.py      # Exploratory Data Analysis script & image exporter
-├── train_model.py     # Data transformation & XGBoost training pipeline
-└── requirements.txt   # Project dependencies
 
-## The Core Challenge
-In a crowded electronics market, consumers often face "analysis paralysis" due to the overwhelming variety of hardware configurations. This project was built to bridge the gap between complex technical specs (CPU, RAM, Storage) and user-centric value, providing data-driven price predictions and personalized purchase recommendations.
 
-## Technical Approach
+## 🎯 Project Overview
 
-### 1. Data Engineering & Cleaning
-Instead of just feeding raw data into a model, I focused on making the data into "machine-learnable":
-*   **Feature Standardisation:** Cleaned and unified categorical variables across diverse brands and operating systems.
-*   **Handling Sparsity:** Managed missing values and duplicates to ensure the model wouldn't learn from noise.
-*   **Encoding Strategy:** Applied strategic encoding to transform hardware specs into numerical formats while preserving feature importance.
+**LapPick** is an end-to-end **Python machine learning application** that predicts laptop prices and generates personalized recommendations using **data preprocessing, XGBoost regression, and Streamlit**.
 
-### 2. The Model: Why XGBoost?
-I chose the **XGBoost Regressor** because of its superior ability to handle tabular data and non-linear relationships between specs and price.
-*   **Performance:** Achieved an **R² Score of ~0.91**, indicating that the model captures 91% of the variance in laptop pricing.
-*   **Evaluation:** Used standard regression metrics to ensure the model generalizes well to unseen configurations.
+It transforms complex laptop specifications into a simple, data-driven **laptop selection experience**.
 
-### 3. The Recommendation Logic
-The system goes beyond simple filtering. It acts as a digital consultant:
-*   **Budget-First Filtering:** Instantly narrows down options based on the user's financial constraint.
-*   **Ranked Suggestions:** Uses the predicted rating to surface the **Top 5** high-value laptops.
-*   **Utility:** Features a CSV export option, allowing users to save their research for offline comparison.
+## 📸 Visual Preview
+![LapPick Preview](images/app-preview.png)
 
-## Tech Stack
-*   **Language:** Python (The backbone)
-*   **Data Science:** Pandas, NumPy, Scikit-learn
-*   **Model:** XGBoost
-*   **Deployment:** Streamlit (For a fast, responsive UI)
+## 💡 The Problem & Core Value
+- 🔎 Simplifies laptop discovery across multiple hardware configurations.
+- 💰 Helps users evaluate laptops within a defined **budget**.
+- 🤖 Combines **price prediction + recommendation ranking** for data-driven decisions.
 
-## Roadmap & Evolution
-To evolve this into a production-grade tool, my next steps involve:
-*   **MLOps:** Containerizing the application using **Docker** for cloud-agnostic deployment.
-*   **Real-time Data:** Integrating Web Scraping or Pricing APIs to move beyond historical datasets.
-*   **Deepening Specs:** Including GPU benchmarks and battery life metrics for a more holistic recommendation.
+## ✨ Key Features & User Flow
+- 🤖 **XGBoost Price Prediction** — Estimates laptop prices from hardware specifications.
+- 🎯 **Personalized Recommendations** — Filters and ranks laptops based on user requirements.
+- 📊 **Data Analysis** — Explores pricing, brands, RAM, storage, processors, and OS.
+- 📁 **CSV Export** — Saves recommended laptops for further comparison.
 
----
-**Developed by Mathan Ponraj**  
-*CSE Graduate | Data & ML Enthusiast*  
-[Connect on LinkedIn](https://www.linkedin.com/in/mathan03/)
+**User Flow:**  
+`Requirements → Data Processing → Price Prediction → Budget Filtering → Ranking → Recommendations`
+
+## 🛠️ Tech Stack & Architecture Decisions
+
+| Layer | Technology | Purpose |
+|---|---|---|
+| Language | **Python** | Core development |
+| Data Processing | **Pandas, NumPy** | Cleaning & transformation |
+| ML Pipeline | **Scikit-learn** | Preprocessing |
+| Prediction | **XGBoost** | Price prediction |
+| Model Persistence | **Joblib** | Model loading & storage |
+| UI | **Streamlit** | Interactive application |
+| Visualization | **Matplotlib** | Data analysis |
+
+## 📈 Challenges & Technical Takeaways
+
+**The Obstacle**
+- Laptop datasets contained **missing values, duplicates, categorical data, and inconsistent formats**.
+- Basic filtering could produce too many irrelevant options.
+
+**The Resolution**
+- Built a structured **Scikit-learn preprocessing pipeline**.
+- Used **XGBoost** to model nonlinear relationships between hardware specifications and price.
+- Combined prediction, filtering, and ranking into a single recommendation workflow.
+
+**Model Performance:** `R² ≈ 0.91`
+
+## ⚙️ Quick Start
+
+```bash
+git clone https://github.com/mathan-ponraj/Laptop-Price-And-Recommendation-System.git
+cd Laptop-Price-And-Recommendation-System
+pip install -r requirements.txt
+streamlit run app.py
+```
