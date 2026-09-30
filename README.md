@@ -6,53 +6,64 @@
 
 
 
-## 🎯 Project Overview
+## Project Overview
 
-**LapPick** is an end-to-end **Python machine learning application** that predicts laptop prices and generates personalized recommendations using **data preprocessing, XGBoost regression, and Streamlit**.
+LapPick is a machine learning-based laptop recommendation system that helps users find suitable laptops based on their budget, brand, RAM, storage, and storage type requirements.
 
-It transforms complex laptop specifications into a simple, data-driven **laptop selection experience**.
+The project uses an XGBoost regression model to predict laptop ratings and ranks the filtered laptops based on their predicted ratings. The trained model is integrated into a Streamlit application to provide an interactive recommendation experience.
 
-## 📸 Visual Preview
-![LapPick Preview](images/app-preview.png)
+## Skills
 
-## 💡 The Problem & Core Value
-- 🔎 Simplifies laptop discovery across multiple hardware configurations.
-- 💰 Helps users evaluate laptops within a defined **budget**.
-- 🤖 Combines **price prediction + recommendation ranking** for data-driven decisions.
+- Data cleaning and preprocessing
+- Exploratory data analysis
+- Feature engineering
+- Machine learning
+- Regression modeling
+- Model evaluation
+- Recommendation system development
+- Model deployment
 
-## ✨ Key Features & User Flow
-- 🤖 **XGBoost Price Prediction** — Estimates laptop prices from hardware specifications.
-- 🎯 **Personalized Recommendations** — Filters and ranks laptops based on user requirements.
-- 📊 **Data Analysis** — Explores pricing, brands, RAM, storage, processors, and OS.
-- 📁 **CSV Export** — Saves recommended laptops for further comparison.
+## Technology
 
-**User Flow:**  
-`Requirements → Data Processing → Price Prediction → Budget Filtering → Ranking → Recommendations`
+Python, Pandas, Scikit-learn, XGBoost, Streamlit, Joblib, Matplotlib, Seaborn
 
-## 🛠️ Tech Stack & Architecture Decisions
+## Workflow
 
-| Layer | Technology | Purpose |
-|---|---|---|
-| Language | **Python** | Core development |
-| Data Processing | **Pandas, NumPy** | Cleaning & transformation |
-| ML Pipeline | **Scikit-learn** | Preprocessing |
-| Prediction | **XGBoost** | Price prediction |
-| Model Persistence | **Joblib** | Model loading & storage |
-| UI | **Streamlit** | Interactive application |
-| Visualization | **Matplotlib** | Data analysis |
+The project includes the following steps:
 
-## 📈 Challenges & Technical Takeaways
+1. **Data Exploration** — Analyze laptop prices, brands, RAM, storage, ratings, and other available features.
+2. **Data Preprocessing** — Handle missing values, cap extreme price values, encode categorical features, and scale numerical features.
+3. **Model Training** — Train an XGBoost regression model to predict laptop ratings.
+4. **Model Evaluation** — Evaluate the model using RMSE and R² metrics.
+5. **Recommendation** — Filter laptops based on user requirements and rank the matching laptops using their predicted ratings.
+6. **Deployment** — Integrate the trained model into a Streamlit application with interactive filters and recommendation results.
 
-**The Obstacle**
-- Laptop datasets contained **missing values, duplicates, categorical data, and inconsistent formats**.
-- Basic filtering could produce too many irrelevant options.
+## Obstacles & Resolutions
 
-**The Resolution**
-- Built a structured **Scikit-learn preprocessing pipeline**.
-- Used **XGBoost** to model nonlinear relationships between hardware specifications and price.
-- Combined prediction, filtering, and ranking into a single recommendation workflow.
+- **Different types of laptop features:** Used `ColumnTransformer`, `OneHotEncoder`, and `StandardScaler` to process categorical and numerical features appropriately.
+- **Extreme price values:** Applied 1st and 99th percentile price capping to reduce the effect of extreme values during model training.
+- **Variation in rating values:** Applied a log transformation to the target variable and converted predictions back to the original scale for evaluation.
+- **Keeping preprocessing consistent between training and prediction:** Combined preprocessing and the XGBoost model into a single Scikit-learn pipeline and saved it using Joblib.
+- **Matching recommendations with user requirements:** Added filters for budget, brand, RAM, storage, and storage type before ranking the available laptops.
+- **Making the model accessible to users:** Built a Streamlit application with interactive filters, top-5 recommendations, error handling, caching, and CSV export.
 
-**Model Performance:** `R² ≈ 0.91`
+## Results
+
+The project produces an interactive laptop recommendation application that combines user requirements with machine learning predictions.
+
+Users can filter laptops based on their budget and specifications, view the top 5 matching laptops ranked by predicted rating, and download the recommendations as a CSV file.
+
+The trained preprocessing and XGBoost model pipeline is saved using Joblib and integrated into the Streamlit application.
+
+## Future Improvements
+
+- Add a multi-factor recommendation score using predicted rating, budget fit, and specification matching.
+- Add SHAP-based explanations to show why a laptop was recommended.
+- Store laptop data in PostgreSQL and use SQL for structured data retrieval.
+- Build a FastAPI backend for the recommendation system.
+- Add MLflow for experiment and model tracking.
+- Add Docker and CI/CD for deployment automation.
+- Add an LLM-based assistant that accepts natural-language laptop requirements and converts them into structured recommendations.
 
 ## ⚙️ Quick Start
 
